@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('function'); // fungsi/jabatan
             $table->foreignId('item_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
-            $table->enum('status', ['dipinjam', 'dikembalikan'])->default('dipinjam');
+            $table->enum('status', ['requested', 'konfirmasi'])->default('requested');
             $table->timestamp('borrowed_at');
             $table->timestamp('returned_at')->nullable();
             $table->timestamps();

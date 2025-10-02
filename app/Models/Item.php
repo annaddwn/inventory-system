@@ -27,6 +27,6 @@ class Item extends Model
 
     public function activeBorrowings()
     {
-        return $this->hasMany(Borrowing::class)->where('status', 'dipinjam');
+        return $this->hasMany(Borrowing::class)->where('status', 'requested');
     }
 }

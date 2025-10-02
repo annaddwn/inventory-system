@@ -7,9 +7,12 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 // User Routes (No Login Required)
-Route::get('/', [UserController::class, 'index'])->name('user.index');
+Route::get('/', [UserController::class, 'showInfo'])->name('user.info');
+Route::post('/user/info', [UserController::class, 'storeInfo'])->name('user.info.store');
+Route::get('/items', [UserController::class, 'index'])->name('user.index');
 Route::get('/cart', [UserController::class, 'cart'])->name('user.cart');
 Route::post('/borrow', [UserController::class, 'borrowItems'])->name('user.borrow');
+Route::get('/reset', [UserController::class, 'resetSession'])->name('user.reset');
 
 // Admin Authentication Routes
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');

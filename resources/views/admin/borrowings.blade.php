@@ -42,8 +42,8 @@
                 class="flex-1 px-4 py-2 border rounded focus:outline-none focus:border-blue-500">
             <select id="statusFilter" class="px-4 py-2 border rounded focus:outline-none focus:border-blue-500">
                 <option value="">Semua Status</option>
-                <option value="dipinjam">Dipinjam</option>
-                <option value="dikembalikan">Dikembalikan</option>
+                <option value="requested">Requested</option>
+                <option value="konfirmasi">Diambil</option>
             </select>
         </div>
 
@@ -58,8 +58,8 @@
                         <th class="text-left px-6 py-3">Barang</th>
                         <th class="text-left px-6 py-3">Jumlah</th>
                         <th class="text-left px-6 py-3">Status</th>
-                        <th class="text-left px-6 py-3">Tanggal Pinjam</th>
-                        <th class="text-left px-6 py-3">Tanggal Kembali</th>
+                        <th class="text-left px-6 py-3">Tanggal Request</th>
+                        <th class="text-left px-6 py-3">Tanggal Diambil</th>
                         <th class="text-left px-6 py-3">Aksi</th>
                     </tr>
                 </thead>
@@ -76,7 +76,7 @@
                         <td class="px-6 py-4">{{ $borrowing->quantity }}</td>
                         <td class="px-6 py-4">
                             <span class="px-3 py-1 rounded text-sm font-semibold
-                                {{ $borrowing->status === 'dipinjam' ? 'bg-yellow-200 text-yellow-800' : 'bg-green-200 text-green-800' }}">
+                                {{ $borrowing->status === 'requested' ? 'bg-yellow-200 text-yellow-800' : 'bg-green-200 text-green-800' }}">
                                 {{ ucfirst($borrowing->status) }}
                             </span>
                         </td>
@@ -85,12 +85,12 @@
                             {{ $borrowing->returned_at ? $borrowing->returned_at->format('d/m/Y H:i') : '-' }}
                         </td>
                         <td class="px-6 py-4">
-                            @if($borrowing->status === 'dipinjam')
+                            @if($borrowing->status === 'requested')
                             <form action="{{ route('admin.borrowings.return', $borrowing->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" 
                                     class="bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700">
-                                    Kembalikan
+                                    Konfirmasi
                                 </button>
                             </form>
                             @else

@@ -88,7 +88,7 @@
                             <td class="py-3">{{ $borrowing->item->name }}</td>
                             <td class="py-3">{{ $borrowing->quantity }}</td>
                             <td class="py-3">
-                                <span class="px-2 py-1 rounded text-sm {{ $borrowing->status === 'dipinjam' ? 'bg-yellow-200 text-yellow-800' : 'bg-green-200 text-green-800' }}">
+                                <span class="px-2 py-1 rounded text-sm {{ $borrowing->status === 'requested' ? 'bg-yellow-200 text-yellow-800' : 'bg-green-200 text-green-800' }}">
                                     {{ $borrowing->status }}
                                 </span>
                             </td>

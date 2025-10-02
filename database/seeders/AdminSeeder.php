@@ -21,13 +21,16 @@ class AdminSeeder extends Seeder
 
         // Create Sample Items
         $items = [
-            ['name' => 'tiramisu coffee milk', 'stock' => 50],
-            ['name' => 'choco creamy latte', 'stock' => 50],
-            ['name' => 'Pumpkin Spice Latte', 'stock' => 30],
+            ['name' => 'Kertas HVS A4', 'stock' => 500],        
+            ['name' => 'Pulpen Tinta Hitam', 'stock' => 150],
+            ['name' => 'Tinta Printer Hitam', 'stock' => 20],
             ['name' => 'Sticky Notes', 'stock' => 100],
-            ['name' => 'Penggaris', 'stock' => 25],
-            ['name' => 'Spidol Warna', 'stock' => 40],
-            ['name' => 'Box File', 'stock' => 20],
+            ['name' => 'Spidol Papan Tulis', 'stock' => 40],
+            ['name' => 'Isi Staples No. 10', 'stock' => 80],
+            ['name' => 'Map Plastik', 'stock' => 70],
+            ['name' => 'Amplop Coklat', 'stock' => 200],
+            ['name' => 'Penghapus Papan Tulis', 'stock' => 30],    
+            ['name' => 'Baterai AA', 'stock' => 60],
         ];
 
         foreach ($items as $item) {

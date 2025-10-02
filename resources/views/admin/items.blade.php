@@ -51,7 +51,7 @@
                         <th class="text-left px-6 py-3">Total Stok</th>
                         <th class="text-left px-6 py-3">Stok Tersedia</th>
                         <th class="text-left px-6 py-3">Stok Tidak Tersedia</th>
-                        <th class="text-left px-6 py-3">Paling Banyak Dipinjam</th>
+                        <th class="text-left px-6 py-3">Paling Banyak Diambil</th>
                         <th class="text-left px-6 py-3">Aksi</th>
                     </tr>
                 </thead>

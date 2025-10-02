@@ -8,13 +8,7 @@
     <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         <!-- Logo -->
         <div class="text-center mb-8">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <div class="w-12 h-12 bg-blue-500 rounded"></div>
-                <div class="w-8 h-8 bg-red-500 rounded"></div>
-                <div class="w-8 h-8 bg-yellow-400 rounded"></div>
-            </div>
-            <h1 class="text-2xl font-bold text-blue-600">PERTAMINA</h1>
-            <p class="text-red-600 font-semibold">GAS NEGARA</p>
+            <img src="{{ asset('Logo_Pertamina.png') }}" alt="Logo Pertamina" class="mx-auto w-48">
         </div>
 
         <div class="mb-6">

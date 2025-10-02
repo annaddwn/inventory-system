@@ -85,23 +85,21 @@ class AdminController extends Controller
     {
         $borrowing = Borrowing::findOrFail($id);
         
-        if ($borrowing->status === 'dikembalikan') {
-            return back()->with('error', 'Barang sudah dikembalikan!');
+        if ($borrowing->status === 'konfirmasi') {
+            return back()->with('error', 'Barang sudah diambil!');
         }
 
         DB::beginTransaction();
         try {
-            $borrowing->status = 'dikembalikan';
+            $borrowing->status = 'konfirmasi';
             $borrowing->returned_at = now();
             $borrowing->save();
 
             $item = $borrowing->item;
-            $item->available_stock += $borrowing->quantity;
-            $item->unavailable_stock -= $borrowing->quantity;
             $item->save();
 
             DB::commit();
-            return back()->with('success', 'Barang berhasil dikembalikan!');
+            return back()->with('success', 'Barang sudah diambil!');
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
